@@ -116,43 +116,86 @@ export default function Index() {
       </section>
 
       {/* Work with depthwise */}
-      <section id="work" className="px-6 md:px-10 py-20 border-t border-navy/10">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-display font-medium text-3xl md:text-4xl tracking-tight text-navy text-center">
-            Work with <span className="italic font-normal">depthwise</span>
-          </h2>
+      <section id="work" className="px-6 md:px-10 py-24 border-t border-navy/10">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <h2 className="font-display font-medium text-3xl md:text-5xl tracking-tight text-navy">
+              Work with <span className="italic font-normal">depthwise</span>
+            </h2>
+            <p className="font-display text-xs tracking-[0.25em] uppercase text-navy/40">
+              Two ways to go deep
+            </p>
+          </div>
 
           <div className="mt-14 grid md:grid-cols-2 gap-6">
-            <article className="rounded-3xl border border-navy/10 bg-white/40 p-9 flex flex-col">
-              <span className="inline-flex items-center gap-2 font-display text-xs tracking-[0.2em] uppercase text-coral">
-                <Icon name="Mountain" size={16} /> On land
-              </span>
-              <p className="font-body mt-6 text-charcoal leading-relaxed">
-                Leadership training and team shifts disguised as play.
-              </p>
-              <p className="font-body mt-4 text-charcoal/80 leading-relaxed">
-                Left field solutions to complex leadership problems and capability challenges.
-              </p>
-              <a href="#" className="font-display text-sm tracking-wide mt-8 inline-flex items-center gap-1.5 text-navy group">
-                Learn more
-                <Icon name="ArrowRight" size={16} className="transition-transform group-hover:translate-x-1" />
-              </a>
+            {/* On land */}
+            <article className="group relative overflow-hidden rounded-[28px] min-h-[480px] flex flex-col justify-end p-9">
+              <img
+                src={IMG.retreat}
+                alt="On land leadership"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-charcoal/10" />
+
+              <div className="absolute top-9 left-9 right-9 flex items-center justify-between">
+                <span className="inline-flex items-center gap-2 font-display text-xs tracking-[0.25em] uppercase text-cream">
+                  <Icon name="Mountain" size={16} /> On land
+                </span>
+                <span className="font-display text-sm text-cream/50">01</span>
+              </div>
+
+              <div className="relative">
+                <p className="font-display text-2xl md:text-[26px] leading-tight text-cream">
+                  Leadership training and team shifts disguised as play.
+                </p>
+                <p className="font-body mt-4 text-cream/75 leading-relaxed max-w-md">
+                  Left field solutions to complex leadership problems and capability challenges.
+                </p>
+                <a
+                  href="#"
+                  className="font-display text-sm tracking-wide mt-7 inline-flex items-center gap-2 text-cream"
+                >
+                  <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cream after:transition-all after:duration-300 group-hover:after:w-full">
+                    Learn more
+                  </span>
+                  <Icon name="ArrowUpRight" size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </a>
+              </div>
             </article>
 
-            <article className="rounded-3xl border border-navy/10 bg-white/40 p-9 flex flex-col">
-              <span className="inline-flex items-center gap-2 font-display text-xs tracking-[0.2em] uppercase text-ocean">
-                <Icon name="Waves" size={16} /> Underwater
-              </span>
-              <p className="font-body mt-6 text-charcoal leading-relaxed">
-                Accessible, culturally safe and connected freediving training.
-              </p>
-              <p className="font-body mt-4 text-charcoal/80 leading-relaxed">
-                Bespoke small group retreats for leaders seeking deep shifts.
-              </p>
-              <a href="#" className="font-display text-sm tracking-wide mt-8 inline-flex items-center gap-1.5 text-navy group">
-                Learn more
-                <Icon name="ArrowRight" size={16} className="transition-transform group-hover:translate-x-1" />
-              </a>
+            {/* Underwater */}
+            <article className="group relative overflow-hidden rounded-[28px] min-h-[480px] flex flex-col justify-end p-9">
+              <img
+                src={IMG.diver}
+                alt="Underwater leadership"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/45 to-navy/15" />
+
+              <div className="absolute top-9 left-9 right-9 flex items-center justify-between">
+                <span className="inline-flex items-center gap-2 font-display text-xs tracking-[0.25em] uppercase text-cream">
+                  <Icon name="Waves" size={16} /> Underwater
+                </span>
+                <span className="font-display text-sm text-cream/50">02</span>
+              </div>
+
+              <div className="relative">
+                <p className="font-display text-2xl md:text-[26px] leading-tight text-cream">
+                  Accessible, culturally safe and connected freediving training.
+                </p>
+                <p className="font-body mt-4 text-cream/75 leading-relaxed max-w-md">
+                  Bespoke small group retreats for leaders seeking deep shifts.
+                </p>
+                <a
+                  href="#"
+                  className="font-display text-sm tracking-wide mt-7 inline-flex items-center gap-2 text-cream"
+                >
+                  <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cream after:transition-all after:duration-300 group-hover:after:w-full">
+                    Learn more
+                  </span>
+                  <Icon name="ArrowUpRight" size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </a>
+              </div>
             </article>
           </div>
         </div>
