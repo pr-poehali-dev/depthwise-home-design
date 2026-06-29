@@ -18,7 +18,19 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['Poppins', 'sans-serif'],
+				body: ['"DM Sans"', 'sans-serif'],
+			},
 			colors: {
+				navy: '#01203F',
+				charcoal: '#282828',
+				cream: '#FDFEBB',
+				pink: '#F476B4',
+				plum: '#A2365E',
+				ocean: '#438DE0',
+				cobalt: '#4164FE',
+				coral: '#FD6337',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
