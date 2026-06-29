@@ -60,57 +60,69 @@ export default function Index() {
       </header>
 
       {/* Hero */}
-      <section className="px-6 md:px-10 pt-16 md:pt-24 pb-20">
-        <div className="mx-auto max-w-5xl text-center">
-          <p className="font-display text-sm tracking-[0.2em] uppercase text-plum">
-            Belle Guaran
-          </p>
+      <section className="relative px-6 md:px-10 pt-12 md:pt-16 pb-24 overflow-hidden">
+        {/* soft ambient accents */}
+        <div className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-pink/15 blur-[120px]" />
+        <div className="pointer-events-none absolute top-40 -right-24 h-96 w-96 rounded-full bg-ocean/10 blur-[140px]" />
 
-          <h1 className="font-display font-medium mt-4 text-6xl md:text-8xl lg:text-9xl tracking-tight text-navy">
-            depth<span className="text-pink">wise</span>
-          </h1>
-
-          <p className="font-display mt-10 mx-auto max-w-2xl text-xl md:text-2xl leading-snug text-charcoal">
-            You stopped learning through play around age 10.
-            <br className="hidden md:block" />
-            It’s time to bring play back to the boardroom.
-          </p>
-
-          <p className="font-display italic text-lg md:text-xl text-ocean mt-6">
-            serious shifts, playful methods.
-          </p>
-
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#work"
-              className="font-display text-sm tracking-wide px-7 py-3 rounded-full bg-navy text-cream hover:bg-navy/90 transition-colors"
-            >
-              Explore Services
-            </a>
-            <a
-              href="#"
-              className="font-display text-sm tracking-wide px-7 py-3 rounded-full border border-navy/25 text-navy hover:border-navy/60 transition-colors"
-            >
-              Get in Touch
-            </a>
+        <div className="relative mx-auto max-w-6xl">
+          {/* Wordmark + byline */}
+          <div className="text-center">
+            <p className="font-display text-sm tracking-[0.3em] uppercase text-plum">
+              Belle Guaran
+            </p>
+            <h1 className="font-display font-medium mt-3 text-[18vw] leading-[0.9] md:text-[11rem] lg:text-[13rem] tracking-tight text-navy">
+              depth<span className="italic font-normal text-pink">wise</span>
+            </h1>
           </div>
-        </div>
 
-        {/* Curated photo group */}
-        <div className="mx-auto max-w-5xl mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-5">
-          <div className="md:col-span-5 overflow-hidden rounded-2xl aspect-[4/5]">
-            <img src={IMG.retreat} alt="Leadership retreat" className="w-full h-full object-cover" />
-          </div>
-          <div className="md:col-span-4 flex flex-col gap-4 md:gap-5">
-            <div className="overflow-hidden rounded-2xl aspect-square">
-              <img src={IMG.belle} alt="Belle Guaran" className="w-full h-full object-cover" />
+          {/* Statement row */}
+          <div className="mt-12 md:mt-16 grid md:grid-cols-12 gap-8 md:gap-12 items-end">
+            <div className="md:col-span-7">
+              <p className="font-display text-2xl md:text-[2.6rem] leading-[1.12] tracking-tight text-charcoal">
+                You stopped learning through play around age 10.
+                <span className="text-navy/45"> It’s time to bring play back to the boardroom.</span>
+              </p>
             </div>
-            <div className="overflow-hidden rounded-2xl flex-1 aspect-square md:aspect-auto">
-              <img src={IMG.hands} alt="Embodied learning" className="w-full h-full object-cover" />
+
+            <div className="md:col-span-5 md:pl-8 md:border-l border-navy/15">
+              <p className="font-display italic text-xl md:text-2xl text-ocean">
+                serious shifts, playful methods.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                  href="#work"
+                  className="font-display text-sm tracking-wide px-7 py-3 rounded-full bg-navy text-cream hover:bg-navy/90 transition-colors"
+                >
+                  Explore Services
+                </a>
+                <a
+                  href="#"
+                  className="font-display text-sm tracking-wide px-7 py-3 rounded-full border border-navy/25 text-navy hover:border-navy/60 transition-colors"
+                >
+                  Get in Touch
+                </a>
+              </div>
             </div>
           </div>
-          <div className="col-span-2 md:col-span-3 overflow-hidden rounded-2xl aspect-[16/9] md:aspect-auto">
-            <img src={IMG.diver} alt="Freediving depth" className="w-full h-full object-cover" />
+
+          {/* Curated photo group — asymmetric editorial grid */}
+          <div className="mt-16 md:mt-24 grid grid-cols-6 grid-rows-2 gap-3 md:gap-5 h-[460px] md:h-[560px]">
+            <figure className="col-span-3 row-span-2 overflow-hidden rounded-[20px] group">
+              <img src={IMG.retreat} alt="Leadership retreat" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </figure>
+            <figure className="col-span-2 row-span-1 overflow-hidden rounded-[20px] group">
+              <img src={IMG.hands} alt="Embodied learning" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </figure>
+            <figure className="col-span-1 row-span-2 overflow-hidden rounded-[20px] group">
+              <img src={IMG.diver} alt="Freediving depth" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </figure>
+            <figure className="col-span-2 row-span-1 overflow-hidden rounded-[20px] relative group">
+              <img src={IMG.belle} alt="Belle Guaran" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <figcaption className="absolute bottom-3 left-4 font-display text-xs tracking-wide text-cream drop-shadow">
+                Belle Guaran
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
