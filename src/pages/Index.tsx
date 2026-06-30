@@ -1,63 +1,13 @@
-import { useState } from 'react';
 import Icon from '@/components/ui/icon';
-
-const IMG = {
-  belle: 'https://cdn.poehali.dev/projects/de60ba74-213a-4ee7-9aec-784a94726725/files/668c58a1-f8c7-4024-8b6c-eeb7c93beb98.jpg',
-  retreat: 'https://cdn.poehali.dev/projects/de60ba74-213a-4ee7-9aec-784a94726725/files/f2ce2a0a-aed6-49b3-84b7-7759815bb2d9.jpg',
-  diver: 'https://cdn.poehali.dev/projects/de60ba74-213a-4ee7-9aec-784a94726725/files/d56e81af-3917-4d25-a032-7b6959f24b74.jpg',
-  hands: 'https://cdn.poehali.dev/projects/de60ba74-213a-4ee7-9aec-784a94726725/files/51a9aaec-aa86-4138-9a24-04c6e284b90a.jpg',
-};
-
-const NAV = ['Home', 'About', 'Services', 'Newsletter', 'Contact'];
+import { Link } from 'react-router-dom';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
+import { IMG } from '@/lib/images';
 
 export default function Index() {
-  const [open, setOpen] = useState(false);
-
   return (
     <div className="min-h-screen font-body text-navy antialiased selection:bg-pink/20">
-      {/* Header */}
-      <header className="relative z-30 px-6 md:px-10 pt-7">
-        <div className="mx-auto max-w-6xl flex items-center justify-between">
-          <span className="font-display text-sm tracking-[0.25em] uppercase text-navy/80 md:opacity-0 md:select-none">
-            depthwise
-          </span>
-
-          <nav className="hidden md:flex items-center gap-9 absolute left-1/2 -translate-x-1/2">
-            {NAV.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="font-display text-[13px] tracking-wide text-navy/70 hover:text-navy transition-colors"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-
-          <button
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden text-navy"
-            aria-label="Toggle menu"
-          >
-            <Icon name={open ? 'X' : 'Menu'} size={24} />
-          </button>
-        </div>
-
-        {open && (
-          <div className="md:hidden mt-5 flex flex-col items-end gap-3 border-t border-navy/10 pt-5">
-            {NAV.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="font-display text-sm tracking-wide text-navy/80"
-                onClick={() => setOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-        )}
-      </header>
+      <SiteHeader />
 
       {/* Hero */}
       <section className="relative px-6 md:px-10 pt-12 md:pt-16 pb-24 overflow-hidden">
@@ -90,18 +40,18 @@ export default function Index() {
                 serious shifts, playful methods.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <a
-                  href="#work"
+                <Link
+                  to="/services"
                   className="font-display text-sm tracking-wide px-7 py-3 rounded-full bg-navy text-cream hover:bg-navy/90 transition-colors"
                 >
                   Explore Services
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/contact"
                   className="font-display text-sm tracking-wide px-7 py-3 rounded-full border border-navy/25 text-navy hover:border-navy/60 transition-colors"
                 >
                   Get in Touch
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -163,15 +113,15 @@ export default function Index() {
                 <p className="font-body mt-4 text-cream/75 leading-relaxed max-w-md">
                   Left field solutions to complex leadership problems and capability challenges.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/services"
                   className="font-display text-sm tracking-wide mt-7 inline-flex items-center gap-2 text-cream"
                 >
                   <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cream after:transition-all after:duration-300 group-hover:after:w-full">
                     Learn more
                   </span>
                   <Icon name="ArrowUpRight" size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </a>
+                </Link>
               </div>
             </article>
 
@@ -198,15 +148,15 @@ export default function Index() {
                 <p className="font-body mt-4 text-cream/75 leading-relaxed max-w-md">
                   Bespoke small group retreats for leaders seeking deep shifts.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/services"
                   className="font-display text-sm tracking-wide mt-7 inline-flex items-center gap-2 text-cream"
                 >
                   <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-cream after:transition-all after:duration-300 group-hover:after:w-full">
                     Learn more
                   </span>
                   <Icon name="ArrowUpRight" size={18} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </a>
+                </Link>
               </div>
             </article>
           </div>
@@ -238,24 +188,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="px-6 md:px-10 py-14 border-t border-navy/10">
-        <div className="mx-auto max-w-5xl flex flex-col md:flex-row md:items-start md:justify-between gap-8">
-          <div className="font-display text-lg tracking-[0.2em] uppercase text-navy/80">
-            depthwise
-          </div>
-          <div className="flex flex-col gap-3 md:items-end md:text-right max-w-md">
-            <a href="#" className="font-display text-sm text-navy/70 hover:text-navy transition-colors">
-              Terms of Service
-            </a>
-            <p className="font-body text-sm text-charcoal/60">Copyright Belle Guaran 2026</p>
-            <p className="font-body text-xs leading-relaxed text-charcoal/50">
-              I acknowledge the traditional lands and waters on which I live, work and dive,
-              and pay my respects to the custodians past, present and future.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
